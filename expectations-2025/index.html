@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E[X]PECTATIONS 2025 | Christ University College Fest</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="E[X]PECTATIONS 2025 - Christ University's Ultimate College Fest. Experience the future of innovation, creativity, and technology.">
+    <meta name="keywords" content="Christ University, College Fest, Expectations 2025, Technology, Innovation, Events">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="E[X]PECTATIONS 2025 | Christ University">
+    <meta property="og:description" content="Join us for the most innovative college fest of 2025">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/ex.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Audiowide&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Intro Video Overlay -->
+    <div id="intro-video-overlay" aria-hidden="false">
+    <video id="intro-video" muted playsinline preload="auto" autoplay poster="assets/images/intro-poster.svg">
+            <source src="intro.mp4" type="video/mp4">
+            <!-- fallback to original long filename if intro.mp4 missing -->
+            <source src="Firefly%20I%20want%20you%20create%20a%20unfolding%20of%20four%20aces%20in%20a%20very%20grand%20manner%20then%20as%20they%20unfold%2093520.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="intro-title visible" id="intro-title">
+            <h1>E[X]PECTATIONS <span>2025</span></h1>
+        </div>
+        <button id="skip-intro" class="skip-btn" aria-label="Skip Intro">Skip Intro</button>
+        <button id="play-intro" class="play-btn" aria-label="Play Intro" hidden>
+            <i class="fas fa-play"></i>
+            <span>Play Intro</span>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home"><img src="assets/images/christ.png" class="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#events">EVENTS</a></li>
+                    <li><a href="#schedule">SCHEDULE</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+            <img src="assets/images/ex.png" class="logo2">
+            <img src="assets/images/stada.png" class="logo3">
+
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="matrix-rain"></div>
+            <div class="cyber-grid"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="hero-title">
+                    <span class="title-line static-text">E[X]PECTATIONS</span>
+                    <div class="title-year-container">
+                        <span class="title-year-hidden">2025</span>
+                        <span class="title-year-reveal">2025</span>
+                        <div class="light-beam"></div>
+                    </div>
+                </h1>
+                <p class="hero-subtitle">WHERE INNOVATION MEETS IMAGINATION</p>
+                <p class="hero-description">
+                    Join Christ University's most electrifying tech fest that pushes boundaries,
+                    sparks creativity, and celebrates the future of technology and innovation.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <span class="stat-number">14</span>
+                        <span class="stat-label">Events</span>
+                    </div>
+    
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="600">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Days</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
+                    <button class="btn btn-primary cyber-btn" onclick="scrollToSection('events')">
+                        <span>Explore Events</span>
+                        <i class="fas fa-rocket"></i>
+                    </button>
+                    <button class="btn btn-secondary cyber-btn" onclick="scrollToSection('about')">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000">
+                <div class="floating-elements">
+                    <div class="floating-icon" style="--delay: 0s;">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 2s;">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 4s;">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="floating-icon" style="--delay: 6s;">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+                <div class="hologram-effect">
+                    <div class="hologram-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+            <div class="scroll-line"></div>
+            <span>Scroll to Explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">About E[X]PECTATIONS 2025</h2>
+                <p class="section-subtitle">Bridging Today's Innovation with Tomorrow's Possibilities</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <div class="about-card cyber-card">
+                        <h3>Vision for the Future</h3>
+                        <p>E[X]PECTATIONS 2025 is not just a college fest; it's a portal to the future. We bring
+                            together brilliant minds, cutting-edge technology, and limitless creativity to showcase
+                            what's possible when passion meets innovation.</p>
+
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-brain neon-icon"></i>
+                                <h4>AI & Machine Learning</h4>
+                                <p>Exploring artificial intelligence and its real-world applications</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-vr-cardboard neon-icon"></i>
+                                <h4>Virtual Reality</h4>
+                                <p>Immersive experiences that blur the line between real and digital</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-rocket neon-icon"></i>
+                                <h4>Innovation Hub</h4>
+                                <p>A platform for groundbreaking ideas and technological breakthroughs</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-users neon-icon"></i>
+                                <h4>Community</h4>
+                                <p>Connecting like-minded innovators and tech enthusiasts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="cyber-display">
+                        <div class="display-screen">
+                            <div class="screen-content">
+                                <div class="data-stream">
+                                    <div class="data-line"></div>
+                                    <div class="data-line"></div>
+                                    <div class="data-line"></div>
+                                </div>
+                                <div class="tech-icons">
+                                    <i class="fab fa-react"></i>
+                                    <i class="fab fa-python"></i>
+                                    <i class="fab fa-js-square"></i>
+                                    <i class="fas fa-database"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section events-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Featured Events</h2>
+                <p class="section-subtitle">Immerse Yourself in Technology and Innovation</p>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="event-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code Crack</h3>
+                    <p>Challenge your programming skills in our ultimate coding competition</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> Day 1</span>
+                        <span><i class="fas fa-trophy"></i> ₹50,000 Prize</span>
+                    </div>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+
+                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="event-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Visualization</h3>
+                    <p>Transform raw data into stunning visual narratives</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> Day 2</span>
+                        <span><i class="fas fa-users"></i> Team Event</span>
+                    </div>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+
+                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="event-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Innovation</h3>
+                    <p>Showcase your artificial intelligence projects and solutions</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> Day 3</span>
+                        <span><i class="fas fa-star"></i> Featured</span>
+                    </div>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+
+                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="event-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Gaming Arena</h3>
+                    <p>Compete in esports tournaments and gaming challenges</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> All Days</span>
+                        <span><i class="fas fa-fire"></i> Popular</span>
+                    </div>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+
+                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="event-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Digital Art</h3>
+                    <p>Express creativity through digital mediums and design</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> Day 2</span>
+                        <span><i class="fas fa-heart"></i> Creative</span>
+                    </div>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+
+                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="event-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Tech Talks</h3>
+                    <p>Industry experts share insights on emerging technologies</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-calendar"></i> All Days</span>
+                        <span><i class="fas fa-graduation-cap"></i> Educational</span>
+                    </div>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section schedule-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Event Schedule</h2>
+                <p class="section-subtitle">Nov 19-20, 2025 | Theme: Paradox - Turning Data Mysteries into Insights</p>
+                <div class="theme-description" data-aos="fade-up" data-aos-delay="200">
+                    <p>Paradoxes are surprising, counterintuitive results that follow seemingly valid data and
+                        reasoning, often contradicting common sense or initial expectations. Just like the magicians in
+                        "Now You See Me" use paradoxes to challenge what we see, data challenges our assumptions and
+                        reveals deeper insights.</p>
+                </div>
+            </div>
+
+            <div class="schedule-tabs" data-aos="fade-up" data-aos-delay="200">
+                <button class="tab-btn active" data-day="day1">Day 1 - Nov 19</button>
+                <button class="tab-btn" data-day="day2">Day 2 - Nov 20</button>
+            </div>
+
+            <div class="schedule-content">
+                <div class="day-schedule active" id="day1">
+                    <div class="timeline">
+                        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                            <div class="timeline-time">9:00 - 10:00 AM</div>
+                            <div class="timeline-content">
+                                <h4>Inauguration Ceremony</h4>
+                                <p>Campus View / Auditorium</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+                            <div class="timeline-time">10:00 - 10:15 AM</div>
+                            <div class="timeline-content">
+                                <h4>Refreshment Distribution</h4>
+                                <p>Pre-Event Break - Near Campus View</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+                            <div class="timeline-time">10:15 AM - 12:30 PM</div>
+                            <div class="timeline-content">
+                                <h4>Parallel Technical & Non-Technical Events (Round I)</h4>
+                                <p>Designated Classrooms / Conference Room 116 / R&D Block</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+                            <div class="timeline-time">12:30 - 1:30 PM</div>
+                            <div class="timeline-content">
+                                <h4>Lunch Break</h4>
+                                <p>Campus Cafeteria</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
+                            <div class="timeline-time">1:30 - 3:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Continuation of Parallel Events (Round II)</h4>
+                                <p>R&D Classrooms</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-right" data-aos-delay="600">
+                            <div class="timeline-time">3:00 - 3:30 PM</div>
+                            <div class="timeline-content">
+                                <h4>Refreshment Break & Student Assembly</h4>
+                                <p>Campus View</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="day-schedule" id="day2">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">9:00 - 10:00 AM</div>
+                            <div class="timeline-content">
+                                <h4>Event Continuation</h4>
+                                <p>Final rounds and competitions</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">10:00 AM - 12:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Technical Events Finals</h4>
+                                <p>Hackathon, Data Detective, Wiz/Story</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">12:00 - 1:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Non-Technical Events Finals</h4>
+                                <p>Shark Tank Final Pitch, IPL Auction, Chess Championship</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">2:00 - 4:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>The Prestige (Surprise Events)</h4>
+                                <p>Data Feud, Guess the Genius, Ad-mire</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">4:00 - 5:00 PM</div>
+                            <div class="timeline-content">
+                                <h4>Awards Ceremony & Closing</h4>
+                                <p>Recognition of outstanding participants</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-subtitle">Moments from Previous Years</p>
+            </div>
+
+            <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="assets/images/view-panda-bear-with-robotic-tech-parts.jpg" alt="Tech Innovation">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- More gallery items can be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to Join the Future?</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card cyber-card">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt neon-icon"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Christ University, Bangalore</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope neon-icon"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>expectations2025@christuniversity.in</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone neon-icon"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 9876543210</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form" data-aos="fade-left">
+                    <form class="cyber-form">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary cyber-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-expectations">
+                        <img src="assets/images/ex.png" alt="Expectations Logo">
+                        <span>E[X]PECTATIONS 2025</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#events">Events</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Christ University. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> for the future of innovation</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="assets/js/particles-config.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
