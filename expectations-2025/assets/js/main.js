@@ -888,25 +888,40 @@ console.log("🎮 Expectations 2025 - Ready to blow minds!");
 
   const hideOverlay = () => {
     if (introOverlay) {
-      // smooth hiding: add 'hiding' to animate, then fully hide
-      introOverlay.classList.add("hiding");
+      // Instead of fading out, do a card-flip animation
+      introOverlay.style.animation = 'card-flip-out 1s ease-out forwards';
+      
       setTimeout(() => {
-        introOverlay.classList.remove("hiding");
-        introOverlay.classList.add("hidden");
-      }, 600);
-      introOverlay.setAttribute("aria-hidden", "true");
+        introOverlay.classList.add('hidden');
+        introOverlay.setAttribute("aria-hidden", "true");
+      }, 1000);
+      
       try {
         introVideo.pause();
         introVideo.currentTime = 0;
       } catch (e) {}
+      
       // mark the intro as finished so site elements can remain visible
       document.body.classList.add("intro-finished");
+      
+      // Start card dealing animation for main content
+      dealCardsAnimation();
+      
       // refresh AOS in case some elements were waiting for scroll/visibility
       if (window.AOS && typeof window.AOS.refresh === "function") {
         window.AOS.refresh();
       }
     }
   };
+
+  // Card dealing animation after intro
+  function dealCardsAnimation() {
+    const cards = document.querySelectorAll('.magic-card, .event-card');
+    cards.forEach((card, index) => {
+      card.style.opacity = '0';
+      card.style.animation = `card-deal 0.8s ease-out ${index * 0.1}s forwards`;
+    });
+  }
 
   introVideo.addEventListener("ended", hideOverlay);
   if (introOverlay) introOverlay.addEventListener("click", hideOverlay);

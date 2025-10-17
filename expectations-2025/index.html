@@ -25,6 +25,8 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/card-animations.css">
+    <link rel="stylesheet" href="assets/css/event-modal.css">
     <link rel="stylesheet" href="assets/css/mobile.css">
 
     <!-- Google Fonts -->
@@ -74,6 +76,7 @@
                     <li><a href="#schedule">SCHEDULE</a></li>
                     <li><a href="#gallery">GALLERY</a></li>
                     <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="register.html" class="register-nav-link">REGISTER</a></li>
                 </ul>
             </div>
             <img src="assets/images/ex.png" class="logo2">
@@ -118,12 +121,12 @@
                 </div>
 
                 <div class="hero-buttons" data-aos="fade-up" data-aos-delay="800">
-                    <button class="btn btn-primary cyber-btn" onclick="scrollToSection('events')">
-                        <span>Explore Events</span>
-                        <i class="fas fa-rocket"></i>
+                    <button class="btn btn-primary cyber-btn" onclick="window.location.href='register.html'">
+                        <span>Register Now</span>
+                        <i class="fas fa-user-plus"></i>
                     </button>
-                    <button class="btn btn-secondary cyber-btn" onclick="scrollToSection('about')">
-                        <span>Learn More</span>
+                    <button class="btn btn-secondary cyber-btn" onclick="scrollToSection('events')">
+                        <span>Explore Events</span>
                         <i class="fas fa-arrow-down"></i>
                     </button>
                 </div>
@@ -166,29 +169,29 @@
 
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right">
-                    <div class="about-card cyber-card">
+                    <div class="about-card cyber-card magic-card card-scroll-reveal">
                         <h3>Vision for the Future</h3>
                         <p>E[X]PECTATIONS 2025 is not just a college fest; it's a portal to the future. We bring
                             together brilliant minds, cutting-edge technology, and limitless creativity to showcase
                             what's possible when passion meets innovation.</p>
 
                         <div class="features-grid">
-                            <div class="feature-item">
+                            <div class="feature-item magic-card card-scroll-reveal card-delay-1">
                                 <i class="fas fa-brain neon-icon"></i>
                                 <h4>AI & Machine Learning</h4>
                                 <p>Exploring artificial intelligence and its real-world applications</p>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item magic-card card-scroll-reveal card-delay-2">
                                 <i class="fas fa-vr-cardboard neon-icon"></i>
                                 <h4>Virtual Reality</h4>
                                 <p>Immersive experiences that blur the line between real and digital</p>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item magic-card card-scroll-reveal card-delay-3">
                                 <i class="fas fa-rocket neon-icon"></i>
                                 <h4>Innovation Hub</h4>
                                 <p>A platform for groundbreaking ideas and technological breakthroughs</p>
                             </div>
-                            <div class="feature-item">
+                            <div class="feature-item magic-card card-scroll-reveal card-delay-4">
                                 <i class="fas fa-users neon-icon"></i>
                                 <h4>Community</h4>
                                 <p>Connecting like-minded innovators and tech enthusiasts</p>
@@ -229,7 +232,7 @@
             </div>
 
             <div class="events-grid">
-                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="event-card cyber-card magic-card card-scroll-reveal card-delay-1" data-event="code-crack">
                     <div class="event-icon">
                         <i class="fas fa-code"></i>
                     </div>
@@ -239,10 +242,10 @@
                         <span><i class="fas fa-calendar"></i> Day 1</span>
                         <span><i class="fas fa-trophy"></i> ₹50,000 Prize</span>
                     </div>
-                    <button class="btn btn-outline">Learn More</button>
+                    <button class="btn btn-outline" onclick="openEventModal('code-crack')">Learn More</button>
                 </div>
 
-                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="event-card cyber-card magic-card card-scroll-reveal card-delay-2" data-event="data-viz">
                     <div class="event-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -252,10 +255,10 @@
                         <span><i class="fas fa-calendar"></i> Day 2</span>
                         <span><i class="fas fa-users"></i> Team Event</span>
                     </div>
-                    <button class="btn btn-outline">Learn More</button>
+                    <button class="btn btn-outline" onclick="openEventModal('data-viz')">Learn More</button>
                 </div>
 
-                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="event-card cyber-card magic-card card-scroll-reveal card-delay-3" data-event="ai-innovation">
                     <div class="event-icon">
                         <i class="fas fa-robot"></i>
                     </div>
@@ -265,10 +268,10 @@
                         <span><i class="fas fa-calendar"></i> Day 3</span>
                         <span><i class="fas fa-star"></i> Featured</span>
                     </div>
-                    <button class="btn btn-outline">Learn More</button>
+                    <button class="btn btn-outline" onclick="openEventModal('ai-innovation')">Learn More</button>
                 </div>
 
-                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="event-card cyber-card magic-card card-scroll-reveal card-delay-4" data-event="gaming">
                     <div class="event-icon">
                         <i class="fas fa-gamepad"></i>
                     </div>
@@ -278,10 +281,10 @@
                         <span><i class="fas fa-calendar"></i> All Days</span>
                         <span><i class="fas fa-fire"></i> Popular</span>
                     </div>
-                    <button class="btn btn-outline">Learn More</button>
+                    <button class="btn btn-outline" onclick="openEventModal('gaming')">Learn More</button>
                 </div>
 
-                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="event-card cyber-card magic-card card-scroll-reveal card-delay-5" data-event="digital-art">
                     <div class="event-icon">
                         <i class="fas fa-palette"></i>
                     </div>
@@ -291,10 +294,10 @@
                         <span><i class="fas fa-calendar"></i> Day 2</span>
                         <span><i class="fas fa-heart"></i> Creative</span>
                     </div>
-                    <button class="btn btn-outline">Learn More</button>
+                    <button class="btn btn-outline" onclick="openEventModal('digital-art')">Learn More</button>
                 </div>
 
-                <div class="event-card cyber-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="event-card cyber-card magic-card card-scroll-reveal card-delay-6" data-event="tech-talks">
                     <div class="event-icon">
                         <i class="fas fa-microphone"></i>
                     </div>
@@ -304,7 +307,7 @@
                         <span><i class="fas fa-calendar"></i> All Days</span>
                         <span><i class="fas fa-graduation-cap"></i> Educational</span>
                     </div>
-                    <button class="btn btn-outline">Learn More</button>
+                    <button class="btn btn-outline" onclick="openEventModal('tech-talks')">Learn More</button>
                 </div>
             </div>
         </div>
@@ -542,11 +545,82 @@
         </div>
     </footer>
 
+    <!-- Event Modal -->
+    <div class="event-modal-overlay" id="eventModal">
+        <div class="event-modal">
+            <div class="event-modal-header">
+                <button class="modal-close" onclick="closeEventModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-event-icon" id="modalIcon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="modal-event-title" id="modalTitle">Event Title</h2>
+                <p class="modal-event-subtitle" id="modalSubtitle">Event Subtitle</p>
+            </div>
+
+            <div class="event-modal-body">
+                <div class="event-details-grid">
+                    <div class="event-detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="event-detail-label">Date</div>
+                        <div class="event-detail-value" id="modalDate">TBA</div>
+                    </div>
+                    <div class="event-detail-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="event-detail-label">Duration</div>
+                        <div class="event-detail-value" id="modalDuration">TBA</div>
+                    </div>
+                    <div class="event-detail-item">
+                        <i class="fas fa-users"></i>
+                        <div class="event-detail-label">Team Size</div>
+                        <div class="event-detail-value" id="modalTeam">TBA</div>
+                    </div>
+                    <div class="event-detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="event-detail-label">Venue</div>
+                        <div class="event-detail-value" id="modalVenue">TBA</div>
+                    </div>
+                </div>
+
+                <div class="event-description">
+                    <h3><i class="fas fa-info-circle"></i> About This Event</h3>
+                    <p id="modalDescription">Event description will appear here...</p>
+                </div>
+
+                <div class="event-rules">
+                    <h3><i class="fas fa-list-check"></i> Rules & Guidelines</h3>
+                    <ul id="modalRules">
+                        <li>Rules will be listed here...</li>
+                    </ul>
+                </div>
+
+                <div class="event-prize" id="modalPrizeSection">
+                    <h3>Total Prize Pool</h3>
+                    <div class="prize-amount" id="modalPrize">₹50,000</div>
+                </div>
+
+                <div class="event-contact">
+                    <h3><i class="fas fa-phone"></i> Event Coordinators</h3>
+                    <div id="modalContacts">
+                        <!-- Contacts will be dynamically inserted -->
+                    </div>
+                </div>
+
+                <button class="modal-register-btn" onclick="window.location.href='register.html'">
+                    <span>Register for This Event</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="assets/js/particles-config.js"></script>
     <script src="assets/js/animations.js"></script>
+    <script src="assets/js/event-modals.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

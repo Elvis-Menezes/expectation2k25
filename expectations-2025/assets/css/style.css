@@ -464,6 +464,21 @@ body {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
+/* Register Navigation Link - Special Styling */
+.register-nav-link {
+  background: linear-gradient(45deg, var(--neon-primary), var(--neon-secondary)) !important;
+  color: var(--bg-primary) !important;
+  font-weight: 700 !important;
+  padding: 12px 20px !important;
+  border-radius: 10px !important;
+  animation: card-glow-pulse 3s ease-in-out infinite;
+}
+
+.register-nav-link:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.5) !important;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -1440,12 +1455,43 @@ body.intro-finished .animate-on-scroll.visible {
 
 .timeline-content {
   flex: 1;
-  background: var(--bg-card);
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
   padding: 20px;
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 15px;
+  border: 2px solid transparent;
   margin: 0 30px;
   backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Add card border gradient to timeline items */
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(45deg, 
+    var(--neon-primary), 
+    var(--neon-secondary), 
+    var(--neon-accent)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-content:hover::before {
+  opacity: 0.8;
+}
+
+.timeline-content:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
 }
 
 .timeline-content h4 {
