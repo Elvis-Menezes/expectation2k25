@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - E[X]PECTATIONS 2025</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/card-animations.css">
+    <link rel="stylesheet" href="assets/css/mobile.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Audiowide&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* Registration Page Specific Styles */
+        body {
+            background: linear-gradient(135deg, #000000 0%, #0a0a0f 50%, #1a1a2e 100%);
+            overflow-x: hidden;
+        }
+
+        .registration-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Playing Cards Background */
+        .cards-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .floating-card-bg {
+            position: absolute;
+            width: 80px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1));
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+            animation: float-random 15s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float-random {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(30px, -50px) rotate(10deg);
+            }
+            50% {
+                transform: translate(-20px, -100px) rotate(-5deg);
+            }
+            75% {
+                transform: translate(40px, -70px) rotate(15deg);
+            }
+        }
+
+        /* Main Registration Container */
+        .registration-container {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Left Side - Info Section */
+        .registration-info {
+            padding: 40px;
+        }
+
+        .registration-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            animation: card-flip-in 1s ease-out;
+        }
+
+        .registration-logo img {
+            width: 80px;
+            height: 80px;
+            filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8));
+            animation: floating-card 4s ease-in-out infinite;
+        }
+
+        .registration-logo h1 {
+            font-family: var(--font-primary);
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--neon-primary);
+            text-shadow: 0 0 30px var(--neon-primary);
+        }
+
+        .registration-tagline {
+            font-family: var(--font-cyber);
+            font-size: 20px;
+            color: var(--neon-accent);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: card-deal 1s ease-out 0.3s both;
+        }
+
+        .registration-details {
+            margin-bottom: 40px;
+        }
+
+        .detail-card {
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            animation: card-bounce-in 0.8s ease-out both;
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:nth-child(1) { animation-delay: 0.5s; }
+        .detail-card:nth-child(2) { animation-delay: 0.7s; }
+        .detail-card:nth-child(3) { animation-delay: 0.9s; }
+
+        .detail-card:hover {
+            background: rgba(0, 255, 255, 0.1);
+            transform: translateX(10px);
+            border-color: var(--neon-primary);
+        }
+
+        .detail-card i {
+            font-size: 28px;
+            color: var(--neon-primary);
+            margin-right: 15px;
+        }
+
+        .detail-card h3 {
+            font-family: var(--font-cyber);
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .detail-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            padding: 15px 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: card-deal 0.6s ease-out both;
+        }
+
+        .features-list li:nth-child(1) { animation-delay: 1.1s; }
+        .features-list li:nth-child(2) { animation-delay: 1.2s; }
+        .features-list li:nth-child(3) { animation-delay: 1.3s; }
+        .features-list li:nth-child(4) { animation-delay: 1.4s; }
+        .features-list li:nth-child(5) { animation-delay: 1.5s; }
+
+        .features-list li i {
+            color: var(--neon-secondary);
+            font-size: 20px;
+        }
+
+        /* Right Side - Registration Card */
+        .registration-card {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
+            border: 2px solid transparent;
+            border-radius: 30px;
+            padding: 50px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5),
+                        0 0 60px rgba(0, 255, 255, 0.3);
+            position: relative;
+            animation: magic-appear 1.2s ease-out 0.5s both;
+        }
+
+        /* Card Border Animation */
+        .registration-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 30px;
+            padding: 2px;
+            background: linear-gradient(45deg, 
+                var(--neon-primary), 
+                var(--neon-secondary), 
+                var(--neon-accent),
+                var(--neon-purple),
+                var(--neon-primary)
+            );
+            background-size: 300% 300%;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: gradient-shift 4s ease infinite;
+        }
+
+        .registration-card::after {
+            content: '🃏';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 48px;
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+
+        .registration-card h2 {
+            font-family: var(--font-primary);
+            font-size: 36px;
+            color: var(--neon-primary);
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px var(--neon-primary);
+        }
+
+        .registration-card p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        /* Event Selection Cards */
+        .event-selection {
+            margin-bottom: 30px;
+        }
+
+        .event-selection h3 {
+            font-family: var(--font-cyber);
+            font-size: 18px;
+            color: var(--neon-accent);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .event-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .event-option {
+            background: rgba(0, 255, 255, 0.05);
+            border: 2px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .event-option:hover::before {
+            left: 100%;
+        }
+
+        .event-option:hover {
+            border-color: var(--neon-primary);
+            background: rgba(0, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .event-option.selected {
+            border-color: var(--neon-primary);
+            background: rgba(0, 255, 255, 0.15);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+        }
+
+        .event-option i {
+            font-size: 32px;
+            color: var(--neon-primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .event-option span {
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Register Buttons */
+        .register-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 15px;
+            font-family: var(--font-cyber);
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .register-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .register-btn:hover::before {
+            left: 100%;
+        }
+
+        .register-btn-primary {
+            background: linear-gradient(45deg, var(--neon-primary), var(--neon-secondary));
+            color: var(--bg-primary);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+        }
+
+        .register-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(0, 255, 255, 0.6);
+        }
+
+        .register-btn-secondary {
+            background: transparent;
+            border: 2px solid var(--neon-secondary);
+            color: var(--neon-secondary);
+        }
+
+        .register-btn-secondary:hover {
+            background: var(--neon-secondary);
+            color: var(--bg-primary);
+            transform: translateY(-3px);
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-link a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link a:hover {
+            color: var(--neon-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .registration-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .registration-info {
+                padding: 20px;
+            }
+
+            .registration-card {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .registration-logo h1 {
+                font-size: 32px;
+            }
+
+            .event-options {
+                grid-template-columns: 1fr;
+            }
+
+            .registration-card h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Animated Cards Background -->
+    <div class="cards-background">
+        <div class="floating-card-bg" style="top: 10%; left: 5%; animation-delay: 0s;"></div>
+        <div class="floating-card-bg" style="top: 20%; left: 85%; animation-delay: 2s;"></div>
+        <div class="floating-card-bg" style="top: 40%; left: 10%; animation-delay: 4s;"></div>
+        <div class="floating-card-bg" style="top: 60%; left: 90%; animation-delay: 1s;"></div>
+        <div class="floating-card-bg" style="top: 80%; left: 15%; animation-delay: 3s;"></div>
+        <div class="floating-card-bg" style="top: 70%; left: 80%; animation-delay: 5s;"></div>
+    </div>
+
+    <!-- Registration Hero -->
+    <section class="registration-hero">
+        <div class="registration-container">
+            <!-- Left Side - Info -->
+            <div class="registration-info">
+                <div class="registration-logo">
+                    <img src="assets/images/ex.png" alt="E[X]PECTATIONS Logo">
+                    <h1>E[X]PECTATIONS<br><span style="font-size: 32px; color: var(--neon-secondary);">2025</span></h1>
+                </div>
+
+                <div class="registration-tagline">
+                    <i class="fas fa-cards-blank"></i> Join the Future of Innovation
+                </div>
+
+                <div class="registration-details">
+                    <div class="detail-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Event Dates</h3>
+                        <p>November 19-20, 2025<br>Two Days of Innovation & Excitement</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Amazing Prizes</h3>
+                        <p>Win up to ₹50,000 in prize money<br>Certificates for all participants</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Network & Learn</h3>
+                        <p>Connect with industry experts<br>Participate in tech talks & workshops</p>
+                    </div>
+                </div>
+
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> 14 Exciting Events</li>
+                    <li><i class="fas fa-check-circle"></i> Technical & Non-Technical Categories</li>
+                    <li><i class="fas fa-check-circle"></i> Industry Expert Judges</li>
+                    <li><i class="fas fa-check-circle"></i> Certificate of Participation</li>
+                    <li><i class="fas fa-check-circle"></i> Networking Opportunities</li>
+                </ul>
+            </div>
+
+            <!-- Right Side - Registration Card -->
+            <div class="registration-card">
+                <h2>Register Now</h2>
+                <p>Choose your events and join us for an unforgettable experience!</p>
+
+                <div class="event-selection">
+                    <h3><i class="fas fa-list-check"></i> Select Event Category</h3>
+                    <div class="event-options">
+                        <div class="event-option" data-category="technical">
+                            <i class="fas fa-code"></i>
+                            <span>Technical Events</span>
+                        </div>
+                        <div class="event-option" data-category="non-technical">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Non-Technical Events</span>
+                        </div>
+                        <div class="event-option" data-category="gaming">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Gaming Arena</span>
+                        </div>
+                        <div class="event-option" data-category="all">
+                            <i class="fas fa-star"></i>
+                            <span>All Events</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="register-buttons">
+                    <button class="register-btn register-btn-primary" onclick="openRegistrationForm()">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Register via Google Forms</span>
+                    </button>
+                    
+                    <button class="register-btn register-btn-secondary" onclick="window.location.href='index.html#events'">
+                        <i class="fas fa-info-circle"></i>
+                        <span>View Event Details</span>
+                    </button>
+                </div>
+
+                <div class="back-link">
+                    <a href="index.html">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="assets/js/particles-config.js"></script>
+    
+    <script>
+        // Event selection interaction
+        const eventOptions = document.querySelectorAll('.event-option');
+        let selectedCategory = null;
+
+        eventOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                eventOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedCategory = this.dataset.category;
+            });
+        });
+
+        // Open Google Forms registration
+        function openRegistrationForm() {
+            // Replace with your actual Google Form URL
+            const googleFormURL = 'https://forms.gle/YOUR_FORM_ID_HERE';
+            
+            if (selectedCategory) {
+                // You can append category as a parameter if your form supports it
+                // window.open(`${googleFormURL}?category=${selectedCategory}`, '_blank');
+                window.open(googleFormURL, '_blank');
+            } else {
+                // If no category selected, still open the form
+                window.open(googleFormURL, '_blank');
+            }
+        }
+
+        // Add sound effect on button hover
+        const buttons = document.querySelectorAll('.register-btn, .event-option');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                // Optional: Add hover sound effect
+            });
+        });
+    </script>
+</body>
+</html>
